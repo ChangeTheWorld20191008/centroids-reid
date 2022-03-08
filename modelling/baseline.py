@@ -92,7 +92,8 @@ class Baseline(nn.Module):
         base_out = self.base(x)
         global_feat = self.gap(base_out)
         global_feat = global_feat.view(global_feat.shape[0], -1)
-        
+        # print(f"[TMP]: size is {global_feat.size()}")
+
         return base_out, global_feat
 
     def load_param(self, trained_path, load_specific=None):
